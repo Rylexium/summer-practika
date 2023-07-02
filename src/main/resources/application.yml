@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 30000
+            readTimeout: 30000
+            loggerLevel: FULL
+  flyway:
+    baseline-on-migrate: true
+
+server:
+  port: 80
+
+url:
+  giphy: https://api.giphy.com
+  exchange-rates: https://openexchangerates.org
+
+exchange-rates:
+  app-id: "fad4352020d84dc2929ddbc1f121836b"
+
+giphy:
+  app-key: "33l4C2oYmBUCDXn2flrmiRBr12RhkmBP"
+
